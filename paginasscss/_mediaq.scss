@@ -1,0 +1,178 @@
+
+
+
+
+@media (max-width: 480px) {
+
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding: 10px ; /* hace que el ancho y alto de los elementos incluya el padding y el borde */
+}
+
+    
+  .header {
+    flex-direction: column-reverse;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+
+    img {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+    }
+
+    a {
+      padding: 1px;
+      margin: 1px;
+      font-size: 12px;  // Aumenté el tamaño de la fuente a un valor más legible
+      height: auto;  // Elimine la altura fija (1pt)
+    }
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+     // Añadí algo de padding para separar los enlaces del borde
+  }
+
+  .contenedor-footer {
+      flex-direction: column; // Apila las secciones verticalmente
+      align-items: center; // Centra las secciones horizontalmente
+
+      section {
+        margin-bottom: 10px; // Reduce el espacio entre las secciones
+      }
+
+
+  .contenedor-footer-pago,
+  .contenedor-footer-horario,
+  .contenedor-footer-redes {
+    width: 50%;
+    margin-bottom: 20px; //Reduje el margen considerablemente. 80px es muchisimo para mobile
+   font-size: small;
+  }
+
+  .contenedor-footer ul,
+  .contenedor-footer li {
+    font-size: 0.8em;
+    max-width: 100%;
+  }
+
+  .logo-footer {
+    width: 40px;
+  }
+
+  .logo-redes {
+    width: 25px;
+  }
+}
+
+   .whatsapp-button img {
+        width: 50px; /* Tamaño más pequeño en pantallas pequeñas */
+        opacity: 0.5; /* Transparencia del 50% en pantallas pequeñas */
+    }
+
+    .whatsapp-button:hover img {
+      opacity: 0.7; /* Un poco más visible al pasar el ratón */
+      transform: scale(1.05); /* Reducimos el aumento al pasar el mouse */
+    }
+  
+
+
+ 
+
+
+   
+
+  
+  }
+
+  
+
+
+
+  @media (max-width: 768px) {
+
+  .header {
+    flex-direction: column-reverse;
+    overflow-x: hidden;
+
+    img {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+    }
+
+    a {
+      padding: 1px;
+      margin: 1px;
+      font-size: 12px;
+      height: auto;
+    }
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .contenedor-footer {
+    flex-direction: column; /* Apila las secciones verticalmente */
+    align-items: center; /* Centra las secciones horizontalmente */
+
+    section {
+      margin-bottom: 10px; /* Reduce el espacio entre las secciones */
+    }
+  }
+
+  .contenedor-footer-pago,
+  .contenedor-footer-horario,
+  .contenedor-footer-redes {
+    width: 50%;
+    margin-bottom: 20px;
+    font-size: small;
+  }
+
+  .contenedor-footer ul,
+  .contenedor-footer li {
+    font-size: 0.8em;
+    max-width: 100%;
+  }
+
+  .logo-footer {
+    width: 40px;
+  }
+
+  .logo-redes {
+    width: 25px;
+  }
+
+  
+
+  
+
+  .text-bg-warning p-3 {
+    margin: 0;
+    padding: 0;
+  }
+
+  
+
+  
+
+  
+
+  .whatsapp-button img {
+    width: 50px;
+    opacity: 0.5;
+  }
+
+  .whatsapp-button:hover img {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}

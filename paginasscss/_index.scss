@@ -1,0 +1,339 @@
+
+@use "./variables.scss" as*;
+@use "./mediaq.scss" as*;
+
+$base-center: center;
+
+
+@media (min-width: 768px)
+{
+.contenedor-index{
+background-color: burlywood;
+display: grid;
+grid-template-areas:
+"texto1 texto1 texto1 texto1 texto1 texto1 texto1 texto1 " 
+"foto1 foto1 foto1 foto1 foto1 foto1 foto1 foto1"
+"texto2 texto2 texto2 texto2 texto2 texto2 texto2 texto2"
+"logo1 logo2 logo3 logo4 logo5 logo6 logo7 logo8"
+"texto3 texto3 texto3 texto3 texto3 texto3 texto3 texto3"
+"sector1 sector1 sector1 sector1 sector1 sector1 sector1 sector1"
+
+;
+grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% ; 
+grid-template-rows: auto auto auto auto auto auto;
+justify-items: $base-center; /* define las filas */
+align-items: $base-center; /* define las columnas */
+justify-content: $base-center; /* centra el contenido horizontalmente */
+
+
+.tituloprincipal {
+   
+    
+
+    grid-area: texto1;
+    color: rgb(0, 0, 0); /* color del texto */
+    text-align: $base-center; /* texto centrado */
+    font-size: 30px; /* tamaño de la fuente */
+    font-weight: bold; /* negrita */
+    margin-bottom: 15px; /* margen inferior */
+ @include estilo-titulo;
+
+}
+
+img {
+    width: 90%; /* ancho de la imagen */
+    height: 90%; /* alto automático para mantener la proporción */
+    border-radius: 10px; /* bordes redondeados */
+    margin: 15px;
+   
+}
+
+.imagen-frentenoche {
+
+    grid-area: foto1; /* área de la cuadrícula */
+    border: red 2px solid; /* borde rojo de 2px */
+
+     }
+
+
+.titulo-marcas{
+    grid-area: texto2;
+   
+ @include estilo-subtitulo;
+
+}
+.logo-marcas1 {
+    grid-area: logo1;
+    
+}
+
+.logo-marcas2 {
+    grid-area: logo2;
+    
+}
+
+.logo-marcas3 {
+    grid-area: logo3;
+    
+}
+
+.logo-marcas4 {
+    grid-area: logo4;
+    
+}
+
+.logo-marcas5 {
+    grid-area: logo5;
+    
+}
+
+.logo-marcas6 {
+    grid-area: logo6;
+    
+}
+
+.logo-marcas7 {
+    grid-area: logo7;
+    
+}
+
+.logo-marcas8 {
+    grid-area: logo8;
+    
+}
+.titulo-local{
+
+    grid-area: texto3;
+   @include estilo-subtitulo;
+    
+   
+}
+.sectores1 {
+    grid-area: sector1;
+    top: 0;
+     justify-items:flex-start; /* alinea el contenido al inicio de la celda */
+align-items:flex-start; /* alinea el contenido al inicio de la celda */
+     display: flex; /* usa flexbox para alinear el contenido */
+     flex-direction: column; /* organiza los elementos en una columna */
+     align-items: $base-center; /* centra los elementos horizontalmente */
+     justify-content: $base-center; /* centra los elementos verticalmente */
+     width: 40%; /* ancho del sector */
+     height: 40%; 
+
+.carousel-inner {
+    width: 90%;
+    height: 90%;
+    align-items: $base-center;
+}
+
+}}
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+
+.contenedor-index {
+   background-color: burlywood  ;
+    grid-template-areas:
+      "texto1"
+      "foto1"
+      "texto3"
+      "sector1"
+      "sector2 "
+      "texto2"
+      "logo1"
+      "logo2"
+      "logo3"
+      "logo4"
+      "logo5"
+      "logo6"
+       "logo7" 
+       "logo8";
+
+    grid-template-columns:1fr ;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+
+    display: grid;
+    justify-items: $base-center;
+    align-items: $base-center;
+    justify-content: $base-center;
+    
+
+    
+
+    img {
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .imagen-frentenoche {
+      grid-area: foto1;
+      width: 200px;
+      height: auto;
+ 
+    border: red 2px solid; /* borde rojo de 2px */
+
+    }
+  }
+
+
+
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+.contenedor-index {
+   background-color: burlywood  ;
+    
+    grid-template-areas:
+      "texto1 texto1"
+      "foto1 foto1"
+      "texto2 texto2"
+      "logo1 logo 2"
+      "logo3 logo4"
+      "logo5 logo6"
+       "logo7 logo8"
+      "texto3 texto3"
+      "sector1 sector1"
+      "sector2 sector2"
+      ;
+
+
+    grid-template-columns: 40% 40% ;
+
+
+   justify-items: $base-center;
+    align-items: $base-center;
+    justify-content: $base-center;
+    
+
+    h1{
+      font-size: 2em;}
+      
+      h2{
+        font-size: 1.5em;
+    }
+
+
+    
+    .tituloprincipal {
+   
+    
+
+    grid-area: texto1;
+
+
+}
+
+
+
+    .imagen-frentenoche {
+      grid-area: foto1;
+      width: 400px;
+      height: auto;
+display:flex;
+justify-content: center;
+place-items: center ;
+    border: red 2px solid; /* borde rojo de 2px */
+      
+    }
+
+
+.titulo-marcas{
+    grid-area: texto2;
+   
+
+
+}
+.logo-marcas1 {
+    grid-area: logo1;
+
+    
+}
+
+.logo-marcas2 {
+    grid-area: logo2;
+
+    
+}
+
+.logo-marcas3 {
+    grid-area: logo3;
+      
+    
+}
+
+.logo-marcas4 {
+    grid-area: logo4;
+      
+    
+}
+
+.logo-marcas5 {
+    grid-area: logo5;
+     
+    
+}
+
+.logo-marcas6 {
+    grid-area: logo6;
+       
+    
+}
+
+.logo-marcas7 {
+    grid-area: logo7;
+        
+    
+}
+
+.logo-marcas8 {
+    grid-area: logo8;
+        
+    
+}
+.titulo-local{
+
+    grid-area: texto3;
+  
+    
+   
+}
+.sectores1 {
+    grid-area: sector1;
+       
+
+
+
+  }
+  .sectores2 {
+    grid-area: sector2;
+     
+
+
+
+  }
+   img{
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      margin: 10px 0; // Espaciado vertical entre imágenes
+      border: red 2px solid;
+    }
+
+
+
+
+
+
+}
+
+}

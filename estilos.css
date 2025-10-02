@@ -1,0 +1,1279 @@
+@charset "UTF-8";
+@media (max-width: 480px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding: 10px; /* hace que el ancho y alto de los elementos incluya el padding y el borde */
+  }
+  .header {
+    flex-direction: column-reverse;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+  }
+  .header img {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+  }
+  .header a {
+    padding: 1px;
+    margin: 1px;
+    font-size: 12px;
+    height: auto;
+  }
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  .contenedor-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contenedor-footer section {
+    margin-bottom: 10px;
+  }
+  .contenedor-footer .contenedor-footer-pago,
+  .contenedor-footer .contenedor-footer-horario,
+  .contenedor-footer .contenedor-footer-redes {
+    width: 50%;
+    margin-bottom: 20px;
+    font-size: small;
+  }
+  .contenedor-footer .contenedor-footer ul,
+  .contenedor-footer .contenedor-footer li {
+    font-size: 0.8em;
+    max-width: 100%;
+  }
+  .contenedor-footer .logo-footer {
+    width: 40px;
+  }
+  .contenedor-footer .logo-redes {
+    width: 25px;
+  }
+  .whatsapp-button img {
+    width: 50px; /* Tamaño más pequeño en pantallas pequeñas */
+    opacity: 0.5; /* Transparencia del 50% en pantallas pequeñas */
+  }
+  .whatsapp-button:hover img {
+    opacity: 0.7; /* Un poco más visible al pasar el ratón */
+    transform: scale(1.05); /* Reducimos el aumento al pasar el mouse */
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column-reverse;
+    overflow-x: hidden;
+  }
+  .header img {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+  }
+  .header a {
+    padding: 1px;
+    margin: 1px;
+    font-size: 12px;
+    height: auto;
+  }
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  .contenedor-footer {
+    flex-direction: column; /* Apila las secciones verticalmente */
+    align-items: center; /* Centra las secciones horizontalmente */
+  }
+  .contenedor-footer section {
+    margin-bottom: 10px; /* Reduce el espacio entre las secciones */
+  }
+  .contenedor-footer-pago,
+  .contenedor-footer-horario,
+  .contenedor-footer-redes {
+    width: 50%;
+    margin-bottom: 20px;
+    font-size: small;
+  }
+  .contenedor-footer ul,
+  .contenedor-footer li {
+    font-size: 0.8em;
+    max-width: 100%;
+  }
+  .logo-footer {
+    width: 40px;
+  }
+  .logo-redes {
+    width: 25px;
+  }
+  .text-bg-warning p-3 {
+    margin: 0;
+    padding: 0;
+  }
+  .whatsapp-button img {
+    width: 50px;
+    opacity: 0.5;
+  }
+  .whatsapp-button:hover img {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+@media (min-width: 768px) {
+  .contenedor-contacto {
+    background-color: burlywood;
+    display: grid;
+    grid-template-areas: "texto9 texto9 texto9" "subtexto9 subtexto9 subtexto9" "formulario formulario formulario" "subtexto10 subtexto10 subtexto10" "mapa mapa mapa" "subtexto11 subtexto11 subtexto11" "horarios horarios horarios";
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 200px 100px 400px 100px 400px 20px 200px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedor-contacto .titulo-contacto {
+    grid-area: texto9;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(12, 23, 45); /* Puede ser rgba, hexadecimal, nombre o rgb */
+    font-size: 45px; /* Tamaño de letra: px, em, rem, % */
+    text-align: center;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin: 15px;
+  }
+  .contenedor-contacto .titulo-formulario {
+    grid-area: subtexto9;
+    color: #000000;
+    text-align: center;
+    font-size: 40px; /* tamaño de la fuente */
+    margin-bottom: 5px;
+  }
+  .contenedor-contacto .formulario-contacto {
+    grid-area: formulario;
+    width: 80%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  .contenedor-contacto .formulario-contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contenedor-contacto .formulario-contacto form label {
+    font-weight: bold;
+  }
+  .contenedor-contacto .formulario-contacto form input[type=text],
+  .contenedor-contacto .formulario-contacto form input[type=email],
+  .contenedor-contacto .formulario-contacto form textarea {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .contenedor-contacto .formulario-contacto form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  .contenedor-contacto .formulario-contacto form input[type=submit] {
+    background-color: burlywood;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .contenedor-contacto .formulario-contacto form input[type=submit]:hover {
+    background-color: #3e8e41;
+  }
+  .contenedor-contacto .titulo-ubicacion {
+    grid-area: subtexto10;
+    color: #000000;
+    text-align: center;
+    font-size: 40px; /* tamaño de la fuente */
+    margin-bottom: 5px;
+  }
+  .contenedor-contacto .ubicacion-mapa {
+    grid-area: mapa;
+  }
+  .contenedor-contacto .texto-horarios {
+    grid-area: subtexto11;
+    color: #000000;
+    text-align: center;
+    font-size: 40px; /* tamaño de la fuente */
+    margin-bottom: 5px;
+  }
+  .contenedor-contacto .horarios-ubicacion {
+    grid-area: horarios;
+    text-align: center; /* Centra el texto horizontalmente */
+  }
+  .contenedor-contacto .horarios-ubicacion ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el relleno predeterminado de la lista */
+  }
+}
+@media (max-width: 480px) {
+  .contenedor-contacto {
+    background-color: burlywood;
+    display: grid;
+    grid-template-areas: "texto9" "subtexto9" "formulario" "subtexto10" "mapa" "subtexto11" "horarios";
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedor-contacto h1 {
+    font-size: 2em;
+  }
+  .contenedor-contacto h2 {
+    font-size: 1.5em;
+  }
+  .contenedor-contacto .formulario-contacto {
+    width: 80%;
+    height: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  .contenedor-contacto .ubicacion-mapa {
+    align-items: center;
+  }
+  .contenedor-contacto .horarios-ubicacion {
+    font-size: 0.8em;
+  }
+}
+@media (min-width: 481px) {
+  .contenedor-contacto {
+    background-color: burlywood;
+    display: grid;
+    grid-template-areas: "texto9" "subtexto9" "formulario" "subtexto10" "mapa" "subtexto11" "horarios";
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedor-contacto h1 {
+    font-size: 2em;
+  }
+  .contenedor-contacto h2 {
+    font-size: 1.5em;
+  }
+  .contenedor-contacto .formulario-contacto {
+    width: 80%;
+    height: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  .contenedor-contacto .ubicacion-mapa {
+    align-items: center;
+  }
+  .contenedor-contacto .horarios-ubicacion {
+    font-size: 0.8em;
+  }
+}
+@media (min-width: 768px) {
+  .contenedor-index {
+    background-color: burlywood;
+    display: grid;
+    grid-template-areas: "texto1 texto1 texto1 texto1 texto1 texto1 texto1 texto1 " "foto1 foto1 foto1 foto1 foto1 foto1 foto1 foto1" "texto2 texto2 texto2 texto2 texto2 texto2 texto2 texto2" "logo1 logo2 logo3 logo4 logo5 logo6 logo7 logo8" "texto3 texto3 texto3 texto3 texto3 texto3 texto3 texto3" "sector1 sector1 sector1 sector1 sector1 sector1 sector1 sector1";
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: auto auto auto auto auto auto;
+    justify-items: center; /* define las filas */
+    align-items: center; /* define las columnas */
+    justify-content: center; /* centra el contenido horizontalmente */
+  }
+  .contenedor-index .tituloprincipal {
+    grid-area: texto1;
+    color: rgb(0, 0, 0); /* color del texto */
+    text-align: center; /* texto centrado */
+    font-size: 30px; /* tamaño de la fuente */
+    font-weight: bold; /* negrita */
+    margin-bottom: 15px; /* margen inferior */
+    color: rgb(12, 23, 45); /* Puede ser rgba, hexadecimal, nombre o rgb */
+    font-size: 45px; /* Tamaño de letra: px, em, rem, % */
+    text-align: center;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin: 15px;
+  }
+  .contenedor-index img {
+    width: 90%; /* ancho de la imagen */
+    height: 90%; /* alto automático para mantener la proporción */
+    border-radius: 10px; /* bordes redondeados */
+    margin: 15px;
+  }
+  .contenedor-index .imagen-frentenoche {
+    grid-area: foto1; /* área de la cuadrícula */
+    border: red 2px solid; /* borde rojo de 2px */
+  }
+  .contenedor-index .titulo-marcas {
+    grid-area: texto2;
+    color: #000000;
+    text-align: center;
+    font-size: 40px; /* tamaño de la fuente */
+    margin-bottom: 5px;
+  }
+  .contenedor-index .logo-marcas1 {
+    grid-area: logo1;
+  }
+  .contenedor-index .logo-marcas2 {
+    grid-area: logo2;
+  }
+  .contenedor-index .logo-marcas3 {
+    grid-area: logo3;
+  }
+  .contenedor-index .logo-marcas4 {
+    grid-area: logo4;
+  }
+  .contenedor-index .logo-marcas5 {
+    grid-area: logo5;
+  }
+  .contenedor-index .logo-marcas6 {
+    grid-area: logo6;
+  }
+  .contenedor-index .logo-marcas7 {
+    grid-area: logo7;
+  }
+  .contenedor-index .logo-marcas8 {
+    grid-area: logo8;
+  }
+  .contenedor-index .titulo-local {
+    grid-area: texto3;
+    color: #000000;
+    text-align: center;
+    font-size: 40px; /* tamaño de la fuente */
+    margin-bottom: 5px;
+  }
+  .contenedor-index .sectores1 {
+    grid-area: sector1;
+    top: 0;
+    justify-items: flex-start; /* alinea el contenido al inicio de la celda */
+    align-items: flex-start; /* alinea el contenido al inicio de la celda */
+    display: flex; /* usa flexbox para alinear el contenido */
+    flex-direction: column; /* organiza los elementos en una columna */
+    align-items: center; /* centra los elementos horizontalmente */
+    justify-content: center; /* centra los elementos verticalmente */
+    width: 40%; /* ancho del sector */
+    height: 40%;
+  }
+  .contenedor-index .sectores1 .carousel-inner {
+    width: 90%;
+    height: 90%;
+    align-items: center;
+  }
+}
+@media (max-width: 480px) {
+  .contenedor-index {
+    background-color: burlywood;
+    grid-template-areas: "texto1" "foto1" "texto3" "sector1" "sector2 " "texto2" "logo1" "logo2" "logo3" "logo4" "logo5" "logo6" "logo7" "logo8";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedor-index img {
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+  }
+  .contenedor-index .imagen-frentenoche {
+    grid-area: foto1;
+    width: 200px;
+    height: auto;
+    border: red 2px solid; /* borde rojo de 2px */
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .contenedor-index {
+    background-color: burlywood;
+    grid-template-areas: "texto1 texto1" "foto1 foto1" "texto2 texto2" "logo1 logo 2" "logo3 logo4" "logo5 logo6" "logo7 logo8" "texto3 texto3" "sector1 sector1" "sector2 sector2";
+    grid-template-columns: 40% 40%;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedor-index h1 {
+    font-size: 2em;
+  }
+  .contenedor-index h2 {
+    font-size: 1.5em;
+  }
+  .contenedor-index .tituloprincipal {
+    grid-area: texto1;
+  }
+  .contenedor-index .imagen-frentenoche {
+    grid-area: foto1;
+    width: 400px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    border: red 2px solid; /* borde rojo de 2px */
+  }
+  .contenedor-index .titulo-marcas {
+    grid-area: texto2;
+  }
+  .contenedor-index .logo-marcas1 {
+    grid-area: logo1;
+  }
+  .contenedor-index .logo-marcas2 {
+    grid-area: logo2;
+  }
+  .contenedor-index .logo-marcas3 {
+    grid-area: logo3;
+  }
+  .contenedor-index .logo-marcas4 {
+    grid-area: logo4;
+  }
+  .contenedor-index .logo-marcas5 {
+    grid-area: logo5;
+  }
+  .contenedor-index .logo-marcas6 {
+    grid-area: logo6;
+  }
+  .contenedor-index .logo-marcas7 {
+    grid-area: logo7;
+  }
+  .contenedor-index .logo-marcas8 {
+    grid-area: logo8;
+  }
+  .contenedor-index .titulo-local {
+    grid-area: texto3;
+  }
+  .contenedor-index .sectores1 {
+    grid-area: sector1;
+  }
+  .contenedor-index .sectores2 {
+    grid-area: sector2;
+  }
+  .contenedor-index img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px 0;
+    border: red 2px solid;
+  }
+}
+@media (min-width: 769px) {
+  .contenedor-novedades {
+    background-color: burlywood;
+    display: grid;
+    grid-template-areas: "texto6 texto6 texto6" "foto18 foto19 foto20" "subtexto8 subtexto8 subtexto8" "video1 video1 video1";
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: auto auto auto auto;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+  }
+  .contenedor-novedades .titulo-novedades {
+    grid-area: texto6;
+    color: rgb(12, 23, 45); /* Puede ser rgba, hexadecimal, nombre o rgb */
+    font-size: 45px; /* Tamaño de letra: px, em, rem, % */
+    text-align: center;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin: 15px;
+  }
+  .contenedor-novedades .contenedor-imagennovedades {
+    width: auto;
+    height: auto;
+    border: red 1px solid;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+  }
+  .contenedor-novedades .contenedor-imagennovedades img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.625rem;
+  }
+  .contenedor-novedades .contenedor-imagennovedades img:hover {
+    transform: rotate(20deg);
+  }
+  .contenedor-novedades .contenedor-imagennovedades .novedades-img1 {
+    grid-area: foto18;
+  }
+  .contenedor-novedades .contenedor-imagennovedades .novedades-img2 {
+    grid-area: foto19;
+  }
+  .contenedor-novedades .contenedor-imagennovedades .novedades-img3 {
+    grid-area: foto20;
+  }
+  .contenedor-novedades .contenedor-imagennovedades #boton-vendernovedades {
+    background-color: green;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .contenedor-novedades .contenedor-imagennovedades #boton-vendernovedades:hover {
+    background-color: black;
+  }
+  .contenedor-novedades .texto-novedades {
+    grid-area: subtexto8;
+    color: #000000;
+    text-align: center;
+    font-size: 40px; /* tamaño de la fuente */
+    margin-bottom: 5px;
+  }
+  .contenedor-novedades .video-novedades {
+    grid-area: video1;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 768px;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width * 100) */
+    height: 0; /* Importante: altura debe ser 0 */
+    overflow: hidden; /* Evita scrollbars innecesarios */
+  }
+  .contenedor-novedades .video-novedades iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .contenedor-novedades {
+    background-color: burlywood;
+    display: grid;
+    grid-template-areas: "texto6" "contenedorimagen1" "contenedorimagen2" "contenedorimagen3" "subtexto8" "video1";
+    grid-template-columns: 1fr; /* Una sola columna */
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    padding-block-end: 5pt;
+    width: auto; /* Ajusta según el diseño */
+    height: auto; /* Ajusta según el diseño */
+    border: red 1px solid;
+    text-align: center;
+  }
+  .contenedor-novedades #primeraimagen {
+    grid-area: contenedorimagen1;
+  }
+  .contenedor-novedades #segundaimagen {
+    grid-area: contenedorimagen2;
+  }
+  .contenedor-novedades #terceraimagen {
+    grid-area: contenedorimagen3;
+  }
+  .contenedor-novedades .contenedor-imagennovedades {
+    width: auto;
+    height: auto;
+    border: red 1px solid;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+  }
+  .contenedor-novedades h1 {
+    font-size: 2em; /* Utiliza em o rem para tamaños responsivos */
+  }
+  .contenedor-novedades h2 {
+    font-size: 1.5em; /* Utiliza em o rem para tamaños responsivos */
+  }
+  .contenedor-novedades img {
+    width: 150px; /* Ocupa todo el espacio disponible en su celda */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 0.625rem; /* 10px; (Usar rem para accesibilidad) */
+  }
+  .contenedor-novedades #boton-vendernovedades {
+    background-color: green;
+    color: black;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    align-items: center; /* centra los elementos horizontalmente */
+  }
+  .contenedor-novedades .videoyoutube {
+    width: 90%; /* Ocupa casi todo el ancho en móviles */
+    height: auto; /* Mantiene la proporción */
+    margin: 5px auto; /* Centrado horizontal */
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .contenedor-novedades .video-novedades::before { /* Corrección: Aplica el before directamente al contenedor en la media query*/
+    content: "";
+    display: block;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .contenedor-novedades {
+    background-color: burlywood;
+    display: grid;
+    grid-template-areas: "texto6" "contenedorimagen1" "contenedorimagen2" "contenedorimagen3" "subtexto8" "video1";
+    grid-template-columns: 1fr; /* Una sola columna */
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    border: red 1px solid;
+  }
+  .contenedor-novedades #primeraimagen {
+    grid-area: contenedorimagen1;
+  }
+  .contenedor-novedades #segundaimagen {
+    grid-area: contenedorimagen2;
+  }
+  .contenedor-novedades #terceraimagen {
+    grid-area: contenedorimagen3;
+  }
+  .contenedor-novedades .contenedor-imagennovedades {
+    width: auto;
+    height: auto;
+    border: red 1px solid;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+  }
+  .contenedor-novedades h1 {
+    font-size: 2em; /* Utiliza em o rem para tamaños responsivos */
+  }
+  .contenedor-novedades h2 {
+    font-size: 1.5em; /* Utiliza em o rem para tamaños responsivos */
+  }
+  .contenedor-novedades img {
+    width: 300px; /* Ocupa todo el espacio disponible en su celda */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 0.625rem; /* 10px; (Usar rem para accesibilidad) */
+  }
+  .contenedor-novedades #boton-vendernovedades {
+    background-color: green;
+    color: black;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    align-items: center; /* centra los elementos horizontalmente */
+  }
+  .contenedor-novedades .videoyoutube {
+    width: 90%; /* Ocupa casi todo el ancho en móviles */
+    height: auto; /* Mantiene la proporción */
+    margin: 5px auto; /* Centrado horizontal */
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .contenedor-novedades .video-novedades::before { /* Corrección: Aplica el before directamente al contenedor en la media query*/
+    content: "";
+    display: block;
+  }
+  .whatsapp-button img {
+    width: 30px;
+    opacity: 0.5;
+  }
+  .whatsapp-button:hover img {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+  .header {
+    flex-direction: column-reverse;
+    overflow-x: hidden;
+  }
+  .header img {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+  }
+  .header a {
+    padding: 1px;
+    margin: 1px;
+    font-size: 12px;
+    height: auto;
+  }
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  .contenedor-footer {
+    flex-direction: column; /* Apila las secciones verticalmente */
+    align-items: center; /* Centra las secciones horizontalmente */
+  }
+  .contenedor-footer section {
+    margin-bottom: 10px; /* Reduce el espacio entre las secciones */
+  }
+  .contenedor-footer-pago,
+  .contenedor-footer-horario,
+  .contenedor-footer-redes {
+    width: 50%;
+    margin-bottom: 20px;
+    font-size: small;
+  }
+  .contenedor-footer ul,
+  .contenedor-footer li {
+    font-size: 0.8em;
+    max-width: 100%;
+  }
+  .logo-footer {
+    width: 40px;
+  }
+  .logo-redes {
+    width: 25px;
+  }
+}
+@media (min-width: 768px) {
+  .contenedor-historia {
+    background-color: burlywood;
+    display: grid;
+    grid-template-areas: "texto4 texto4  " "subtexto1 subtexto1" "antiguo1 parrafo1" "subtexto2 subtexto2" "parrafo2 antiguo2" "subtexto3 subtexto3" "antiguo3 parrafo3";
+    grid-template-columns: 40% 40%;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedor-historia .titulo-historia {
+    grid-area: texto4;
+    color: rgb(0, 0, 0); /* color del texto */
+    text-align: center; /* texto centrado */
+    font-weight: bold; /* negrita */
+    margin-bottom: 15px; /* margen inferior */
+    color: rgb(12, 23, 45); /* Puede ser rgba, hexadecimal, nombre o rgb */
+    font-size: 45px; /* Tamaño de letra: px, em, rem, % */
+    text-align: center;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin: 15px;
+  }
+  .contenedor-historia .titulo-epocas1, .contenedor-historia .titulo-epocas3, .contenedor-historia .titulo-epocas2 {
+    grid-area: subtexto1;
+    color: #000000;
+    text-align: center;
+    font-size: 40px; /* tamaño de la fuente */
+    margin-bottom: 5px;
+  }
+  .contenedor-historia img {
+    width: 100%; /* ancho de la imagen */
+    height: 70%; /* alto automático para mantener la proporción */
+    border-radius: 10px;
+    margin: 10px;
+    border: red 2px solid;
+  }
+  .contenedor-historia img:hover {
+    transform: translate(5px, 10px); /* Aumenta el tamaño al pasar el mouse */
+    transition: transform 0.3s ease; /* Suaviza la transición */
+    border: rgb(0, 0, 0) 2px solid; /* Cambia el borde al pasar el mouse */
+  }
+  .contenedor-historia .imagen-historia1 {
+    grid-area: antiguo1;
+  }
+  .contenedor-historia .contenedor-historia p {
+    margin: 10px;
+  }
+  .contenedor-historia .parrafohistoria1 {
+    grid-area: parrafo1;
+  }
+  .contenedor-historia .titulo-epocas2 {
+    grid-area: subtexto2;
+  }
+  .contenedor-historia .imagen-historia2 {
+    grid-area: antiguo2;
+  }
+  .contenedor-historia .parrafohistoria2 {
+    grid-area: parrafo2;
+  }
+  .contenedor-historia .titulo-epocas3 {
+    grid-area: subtexto3;
+  }
+  .contenedor-historia .imagen-historia3 {
+    grid-area: antiguo3;
+  }
+  .contenedor-historia .parrafohistoria3 {
+    grid-area: parrafo3;
+  }
+}
+@media (max-width: 480px) {
+  .contenedor-historia {
+    background-color: burlywood;
+    display: grid;
+    grid-template-areas: "texto4" "subtexto1" "antiguo1" "parrafo1" "subtexto2" "parrafo2" "antiguo2" "subtexto3" "antiguo3" "parrafo3";
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedor-historia h1 {
+    font-size: 2em; /* Utiliza em o rem para tamaños responsivos */
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+  }
+  .contenedor-historia h2 {
+    font-size: 1.5em; /* Utiliza em o rem para tamaños responsivos */
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+  .contenedor-historia img {
+    width: 200px; /* Aumenta el ancho de la imagen para ocupar más espacio */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 10px;
+    margin: 0.5em;
+  }
+  .contenedor-historia p {
+    margin: 0.5em;
+    font-size: 1em; /* Utiliza em o rem para tamaños responsivos */
+    font-size: 10px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+  .contenedor-historia .titulo-historia {
+    grid-area: texto4;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 2.5em; /* Utiliza em o rem para tamaños responsivos */
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  .contenedor-historia .text-bg-warning p-3 {
+    margin: 0;
+    padding: 0;
+  }
+}
+@media (max-width: 768px) {
+  .contenedor-historia {
+    background-color: burlywood;
+    display: grid;
+    grid-template-areas: "texto4" "subtexto1" "antiguo1" "parrafo1" "subtexto2" "parrafo2" "antiguo2" "subtexto3" "antiguo3" "parrafo3";
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedor-historia h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+  }
+  .contenedor-historia h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+  .contenedor-historia img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0.5em;
+  }
+  .contenedor-historia p {
+    margin: 0.5em;
+    font-size: 1em;
+    font-size: 10px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+  .contenedor-historia .titulo-historia {
+    grid-area: texto4;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+}
+@media (min-width: 768px) {
+  .contenedor-productos {
+    background-color: burlywood;
+    display: grid;
+    grid-template-areas: "texto5 texto5 texto5 texto5" "subtexto4 subtexto4 subtexto4 subtexto4" "foto2 foto3 foto4 foto5" "subtexto5 subtexto5 subtexto5 subtexto5" "foto6 foto7 foto8 foto9" "subtexto6 subtexto6 subtexto6 subtexto6" "foto10 foto11 foto12 foto13" "subtexto7 subtexto7 subtexto7 subtexto7" "foto14 foto15 foto16 foto17";
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedor-productos img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 15px;
+    border: red 2px solid;
+  }
+  .contenedor-productos img:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
+    transition: transform 0.3s ease; /* Suaviza la transición */
+    border: rgb(0, 0, 0) 2px solid; /* Cambia el borde al pasar el mouse */
+  }
+  .contenedor-productos .titulo-productos {
+    grid-area: texto5;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: rgb(12, 23, 45); /* Puede ser rgba, hexadecimal, nombre o rgb */
+    font-size: 45px; /* Tamaño de letra: px, em, rem, % */
+    text-align: center;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin: 15px;
+  }
+  .contenedor-productos .titulo-sector1 {
+    grid-area: subtexto4;
+    color: #000000;
+    text-align: center;
+    font-size: 40px; /* tamaño de la fuente */
+    margin-bottom: 5px;
+  }
+  .contenedor-productos .imagen-productos1 {
+    grid-area: foto2;
+  }
+  .contenedor-productos .imagen-productos2 {
+    grid-area: foto3;
+  }
+  .contenedor-productos .imagen-productos3 {
+    grid-area: foto4;
+  }
+  .contenedor-productos .imagen-productos4 {
+    grid-area: foto5;
+  }
+  .contenedor-productos .titulo-sector2 {
+    grid-area: subtexto5;
+    color: #000000;
+    text-align: center;
+    font-size: 40px; /* tamaño de la fuente */
+    margin-bottom: 5px;
+  }
+  .contenedor-productos .imagen-productos5 {
+    grid-area: foto6;
+  }
+  .contenedor-productos .imagen-productos6 {
+    grid-area: foto7;
+  }
+  .contenedor-productos .imagen-productos7 {
+    grid-area: foto8;
+  }
+  .contenedor-productos .imagen-productos8 {
+    grid-area: foto9;
+  }
+  .contenedor-productos .titulo-sector3 {
+    grid-area: subtexto6;
+    color: #000000;
+    text-align: center;
+    font-size: 40px; /* tamaño de la fuente */
+    margin-bottom: 5px;
+  }
+  .contenedor-productos .imagen-productos9 {
+    grid-area: foto10;
+  }
+  .contenedor-productos .imagen-productos10 {
+    grid-area: foto11;
+  }
+  .contenedor-productos .imagen-productos11 {
+    grid-area: foto12;
+  }
+  .contenedor-productos .imagen-productos12 {
+    grid-area: foto13;
+  }
+  .contenedor-productos .titulo-sector4 {
+    grid-area: subtexto7;
+    color: #000000;
+    text-align: center;
+    font-size: 40px; /* tamaño de la fuente */
+    margin-bottom: 5px;
+  }
+  .contenedor-productos .imagen-productos13 {
+    grid-area: foto14;
+  }
+  .contenedor-productos .imagen-productos14 {
+    grid-area: foto15;
+  }
+  .contenedor-productos .imagen-productos15 {
+    grid-area: foto16;
+  }
+  .contenedor-productos .imagen-productos16 {
+    grid-area: foto17;
+  }
+}
+@media (max-width: 480px) {
+  .contenedor-productos {
+    background-color: burlywood;
+    display: grid;
+    grid-template-areas: "texto5" "subtexto4" "foto2" "foto3" "foto4" "foto5" "subtexto5" "foto6" "foto7" "foto8" "foto9" "subtexto6" "foto10" "foto11" "foto12" "foto13" "subtexto7" "foto14" "foto15" "foto16" "foto17";
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedor-productos h1 {
+    font-size: 2em;
+  }
+  .contenedor-productos h2 {
+    font-size: 1.5em;
+  }
+  .contenedor-productos img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px 0;
+    border: red 2px solid;
+  }
+  .contenedor-productos .contenedor-producto {
+    width: 90%;
+    margin: 5px auto;
+    padding: 5px;
+  }
+  .header {
+    flex-direction: column-reverse;
+    overflow-x: hidden;
+  }
+  .header img {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+  }
+  .header a {
+    padding: 1px;
+    margin: 1px;
+    font-size: 12px;
+    height: auto;
+  }
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  .contenedor-footer {
+    flex-direction: column; /* Apila las secciones verticalmente */
+    align-items: center; /* Centra las secciones horizontalmente */
+  }
+  .contenedor-footer section {
+    margin-bottom: 10px; /* Reduce el espacio entre las secciones */
+  }
+  .contenedor-footer .contenedor-footer-pago,
+  .contenedor-footer .contenedor-footer-horario,
+  .contenedor-footer .contenedor-footer-redes {
+    width: 50%;
+    margin-bottom: 20px;
+    font-size: small;
+  }
+  .contenedor-footer .contenedor-footer ul,
+  .contenedor-footer .contenedor-footer li {
+    font-size: 0.8em;
+    max-width: 100%;
+  }
+  .contenedor-footer .logo-footer {
+    width: 40px;
+  }
+  .contenedor-footer .logo-redes {
+    width: 25px;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .contenedor-productos {
+    background-color: burlywood;
+    display: grid;
+    grid-template-areas: "texto5 texto5" "subtexto4 subtexto4" "foto2 foto3" "foto4 foto5" "subtexto5 subtexto5" "foto6 foto7" "foto8 foto9" "subtexto6 subtexto6" "foto10 foto11" "foto12 foto13" "subtexto7 subtexto7" "foto14 foto15" "foto16 foto17";
+    grid-template-columns: 40% 40%;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .contenedor-productos h1 {
+    font-size: 2em;
+  }
+  .contenedor-productos h2 {
+    font-size: 1.5em;
+  }
+  .contenedor-productos img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px 0;
+    border: red 2px solid;
+  }
+  .contenedor-productos .titulo-productos {
+    grid-area: texto5;
+  }
+  .contenedor-productos .titulo-sector1 {
+    grid-area: subtexto4;
+  }
+  .contenedor-productos .imagen-productos1 {
+    grid-area: foto2;
+  }
+  .contenedor-productos .imagen-productos2 {
+    grid-area: foto3;
+  }
+  .contenedor-productos .imagen-productos3 {
+    grid-area: foto4;
+  }
+  .contenedor-productos .imagen-productos4 {
+    grid-area: foto5;
+  }
+  .contenedor-productos .titulo-sector2 {
+    grid-area: subtexto5;
+  }
+  .contenedor-productos .imagen-productos5 {
+    grid-area: foto6;
+  }
+  .contenedor-productos .imagen-productos6 {
+    grid-area: foto7;
+  }
+  .contenedor-productos .imagen-productos7 {
+    grid-area: foto8;
+  }
+  .contenedor-productos .imagen-productos8 {
+    grid-area: foto9;
+  }
+  .contenedor-productos .titulo-sector3 {
+    grid-area: subtexto6;
+  }
+  .contenedor-productos .imagen-productos9 {
+    grid-area: foto10;
+  }
+  .contenedor-productos .imagen-productos10 {
+    grid-area: foto11;
+  }
+  .contenedor-productos .imagen-productos11 {
+    grid-area: foto12;
+  }
+  .contenedor-productos .imagen-productos12 {
+    grid-area: foto13;
+  }
+  .contenedor-productos .titulo-sector4 {
+    grid-area: subtexto7;
+  }
+  .contenedor-productos .imagen-productos13 {
+    grid-area: foto14;
+  }
+  .contenedor-productos .imagen-productos14 {
+    grid-area: foto15;
+  }
+  .contenedor-productos .imagen-productos15 {
+    grid-area: foto16;
+  }
+  .contenedor-productos .imagen-productos16 {
+    grid-area: foto17;
+  }
+}
+.dropdown-menu .dropdown-item {
+  color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* hace que el ancho y alto de los elementos incluya el padding y el borde */
+}
+
+header {
+  flex-direction: row;
+  justify-content: space-around;
+}
+header img {
+  width: 60px; /* ancho del logo */
+  height: 60px; /* alto del logo */
+  border-radius: 50%; /* hace que el logo sea redondo */
+  margin: 10px; /* margen alrededor del logo */
+  display: block; /* hace que el logo se muestre como un bloque */
+  margin-left: auto; /* centra el logo horizontalmente */
+}
+
+/* estilos de nav */
+nav {
+  background-color: #000000; /* color de fondo del nav */
+  color: rgb(255, 255, 255); /* color del texto del nav */
+  padding: 10px; /* espacio interno del nav */
+  margin: auto; /* centra el nav horizontalmente */
+  text-align: center; /* centra el texto dentro del nav */
+}
+nav a {
+  padding: 10px; /* espacio interno de los enlaces */
+  margin: 5px; /* margen alrededor de los enlaces */
+}
+
+/* whatapp de costado --------------------------------------- */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+.whatsapp-button .whatsapp-button img {
+  width: 60px; /* Ajusta el tamaño del logo */
+  height: auto;
+  border-radius: 50%; /* Hace que el logo sea circular */
+}
+
+.whatsapp-button:hover img {
+  transform: scale(1.1); /* Pequeño aumento al pasar el ratón */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* para footer -----------------------------------------------------------------------------------------*/
+footer {
+  background-color: #000000;
+  color: white; /* Cambiado a blanco para que sea visible sobre el fondo negro */
+  text-align: center;
+  width: 100%;
+}
+footer a {
+  color: #ffffff; /* Mantenemos el color blanco para los enlaces */
+  text-decoration: none;
+}
+footer .contenedor-footer {
+  color: rgb(255, 255, 255);
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly; /* Espacio uniforme entre las secciones */
+  align-items: center; /* Centra verticalmente los elementos */
+  padding: 20px;
+}
+footer .contenedor-footer section {
+  padding: 10px;
+}
+footer .contenedor-footer-horario,
+footer .contenedor-footer-pago,
+footer .contenedor-footer-redes {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centramos horizontalmente los elementos dentro de la columna */
+}
+footer .logo-footer {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px;
+}
+footer .logo-redes {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 5px;
+  display: inline-block;
+}
+
+.animacioncliente {
+  border: red 2px solid;
+  transition: 2s;
+  background-size: cover;
+}
+
+.animacioncliente:hover {
+  transform: rotate(360deg);
+  border: rgb(254, 254, 254) 2px solid;
+  background-size: cover;
+}
+
+/*# sourceMappingURL=estilos.css.map */

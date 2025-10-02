@@ -1,0 +1,361 @@
+@use "./variables.scss" as*;
+@use "./mediaq.scss" as*;
+
+@media (min-width: 768px)
+{
+
+.contenedor-productos {
+    background-color: burlywood;
+    display: grid;
+    grid-template-areas:
+        "texto5 texto5 texto5 texto5"
+        "subtexto4 subtexto4 subtexto4 subtexto4" 
+        "foto2 foto3 foto4 foto5"
+        "subtexto5 subtexto5 subtexto5 subtexto5" 
+        "foto6 foto7 foto8 foto9"
+        "subtexto6 subtexto6 subtexto6 subtexto6" 
+        "foto10 foto11 foto12 foto13"
+        "subtexto7 subtexto7 subtexto7 subtexto7" 
+        "foto14 foto15 foto16 foto17";
+    grid-template-columns: 20% 20% 20% 20%; 
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+    justify-items: center; 
+    align-items: center; 
+    justify-content: center;
+
+    img {
+       max-width: 100%;
+     
+        border-radius: 10px;
+        margin: 15px;
+        border: red 2px solid;
+      
+    }
+    img:hover {
+        transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
+        transition: transform 0.3s ease; /* Suaviza la transición */
+        border: rgb(0, 0, 0) 2px solid; /* Cambia el borde al pasar el mouse */
+    }
+
+    .titulo-productos {
+        grid-area: texto5;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 15px;
+         @include estilo-titulo;
+
+    }
+
+    .titulo-sector1{
+        grid-area: subtexto4;
+ @include estilo-subtitulo;
+    }
+    .imagen-productos1 {
+        grid-area: foto2;
+       
+    }
+
+    .imagen-productos2 {
+        grid-area: foto3;
+    }
+
+    .imagen-productos3 {
+        grid-area: foto4;
+    }
+    .imagen-productos4 {
+        grid-area: foto5;
+    }
+
+    .titulo-sector2{
+        grid-area: subtexto5;
+   @include estilo-subtitulo;
+    }
+    .imagen-productos5 {
+        grid-area: foto6;
+    }
+    .imagen-productos6 {
+        grid-area: foto7;
+    }
+    .imagen-productos7 {
+        grid-area: foto8;
+    }
+    .imagen-productos8 {
+        grid-area: foto9;
+    }
+
+    .titulo-sector3{
+        grid-area: subtexto6;
+  @include estilo-subtitulo;
+    }
+    .imagen-productos9 {
+        grid-area: foto10;
+    }
+    .imagen-productos10 {
+        grid-area: foto11;
+    }
+    .imagen-productos11 {
+        grid-area: foto12;
+    }
+    .imagen-productos12 {
+        grid-area: foto13;
+    }
+
+    .titulo-sector4{
+        grid-area: subtexto7;
+    @include estilo-subtitulo;
+    }
+
+
+
+
+    .imagen-productos13 {
+        grid-area: foto14;
+    }
+    .imagen-productos14 {
+        grid-area: foto15;
+    }
+    .imagen-productos15 {
+        grid-area: foto16;
+    }
+    .imagen-productos16 {
+        grid-area: foto17;
+    }
+
+}
+}
+@media (max-width: 480px) {
+
+
+       .contenedor-productos {
+         background-color: burlywood;
+    display: grid;
+    grid-template-areas:
+      "texto5"
+      "subtexto4"
+      "foto2"
+      "foto3"
+      "foto4"
+      "foto5"
+      "subtexto5"
+      "foto6"
+      "foto7"
+      "foto8"
+      "foto9"
+      "subtexto6"
+      "foto10"
+      "foto11"
+      "foto12"
+      "foto13"
+      "subtexto7"
+      "foto14"
+      "foto15"
+      "foto16"
+      "foto17";
+
+    grid-template-columns: 1fr; // Una sola columna
+   
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      font-size: 2em; //Utiliza em o rem para tamaños responsivos
+    }
+
+    h2 {
+      font-size: 1.5em; //Utiliza em o rem para tamaños responsivos
+    }
+  
+  img {
+    width: 150px; // Ocupa casi todo el ancho en móviles
+    height: auto; // Mantiene la proporción de la imagen
+    border-radius: 10px;
+    margin: 10px 0; // Espaciado vertical entre imágenes
+    border: red 2px solid;
+  }
+  .contenedor-producto {
+    width: 90%; // Ocupa casi todo el ancho en móviles
+    margin: 5px auto; // Centrado horizontal
+    padding: 5px;
+  }
+       }
+    .header {
+    flex-direction: column-reverse;
+    overflow-x: hidden;
+
+    img {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+    }
+
+    a {
+      padding: 1px;
+      margin: 1px;
+      font-size: 12px;
+      height: auto;
+    }
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .contenedor-footer {
+    flex-direction: column; /* Apila las secciones verticalmente */
+    align-items: center; /* Centra las secciones horizontalmente */
+
+    section {
+      margin-bottom: 10px; /* Reduce el espacio entre las secciones */
+    }
+  
+  .contenedor-footer-pago,
+  .contenedor-footer-horario,
+  .contenedor-footer-redes {
+    width: 50%;
+    margin-bottom: 20px;
+    font-size: small;
+  }
+
+  .contenedor-footer ul,
+  .contenedor-footer li {
+    font-size: 0.8em;
+    max-width: 100%;
+  }
+
+  .logo-footer {
+    width: 40px;
+  }
+
+  .logo-redes {
+    width: 25px;
+  }
+
+  }}
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .contenedor-productos {
+     background-color: burlywood;
+    display: grid;
+    grid-template-areas:
+      "texto5 texto5"
+      "subtexto4 subtexto4"
+      "foto2 foto3"
+      "foto4 foto5"
+      "subtexto5 subtexto5"
+      "foto6 foto7"
+      "foto8 foto9"
+      "subtexto6 subtexto6"
+      "foto10 foto11"
+      "foto12 foto13"
+      "subtexto7 subtexto7"
+      "foto14 foto15"
+      "foto16 foto17";
+
+    grid-template-columns: 40% 40%; // Dos columnas
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      font-size: 2em;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+    img{
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      margin: 10px 0; // Espaciado vertical entre imágenes
+      border: red 2px solid;
+    }
+
+        .titulo-productos {
+        grid-area: texto5;
+
+
+    }
+
+    .titulo-sector1{
+        grid-area: subtexto4;
+
+    }
+    .imagen-productos1 {
+        grid-area: foto2;
+       
+    }
+
+    .imagen-productos2 {
+        grid-area: foto3;
+    }
+
+    .imagen-productos3 {
+        grid-area: foto4;
+    }
+    .imagen-productos4 {
+        grid-area: foto5;
+    }
+
+    .titulo-sector2{
+        grid-area: subtexto5;
+  
+    }
+    .imagen-productos5 {
+        grid-area: foto6;
+    }
+    .imagen-productos6 {
+        grid-area: foto7;
+    }
+    .imagen-productos7 {
+        grid-area: foto8;
+    }
+    .imagen-productos8 {
+        grid-area: foto9;
+    }
+
+    .titulo-sector3{
+        grid-area: subtexto6;
+
+    }
+    .imagen-productos9 {
+        grid-area: foto10;
+    }
+    .imagen-productos10 {
+        grid-area: foto11;
+    }
+    .imagen-productos11 {
+        grid-area: foto12;
+    }
+    .imagen-productos12 {
+        grid-area: foto13;
+    }
+
+    .titulo-sector4{
+        grid-area: subtexto7;
+  
+    }
+
+
+
+
+    .imagen-productos13 {
+        grid-area: foto14;
+    }
+    .imagen-productos14 {
+        grid-area: foto15;
+    }
+    .imagen-productos15 {
+        grid-area: foto16;
+    }
+    .imagen-productos16 {
+        grid-area: foto17;
+    }
+
+  }}
