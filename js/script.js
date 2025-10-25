@@ -2,7 +2,7 @@
 // PROGRAMA: CONSULTAR PRECIO DE PRODUCTOS
 // -----------------------------------------------------------
 
-// 1️ Defini un array 
+//  Defini un array 
 const productos = [
     { nombre: "Gajos dulces", precio: 500 },
     { nombre: "Bon o bon", precio: 300 },
@@ -54,7 +54,9 @@ function calcularPrecioConDescuento(precio, descuento) {
 
 
 function aplicarDescuentoPorCantidad(cantidad, precioTotal) {
-    const descuento = 10; // 10%
+    const descuento = 10; 
+
+    
     if (cantidad >= 2) {
         console.log(` Aplicado un descuento del ${descuento}% por llevar ${cantidad} productos.`);
         return calcularPrecioConDescuento(precioTotal, descuento);
