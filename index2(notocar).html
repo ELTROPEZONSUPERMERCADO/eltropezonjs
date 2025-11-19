@@ -453,3 +453,668 @@ const mayoresDe25 = arrayClientes.filter(cliente => cliente.edad > 25);
 
 console.log(mayoresDe25);
 
+
+
+
+
+
+
+ESTO SE ENTREGO//////////////////////////////////////////
+// -----------------------------------------------------------
+// PROGRAMA: CONSULTAR PRECIO DE PRODUCTOS
+// -----------------------------------------------------------
+
+//  Defini un array 
+const productos = [
+    { nombre: "Gajos dulces", precio: 500 },
+    { nombre: "Bon o bon", precio: 300 },
+    { nombre: "Chocolates surtidos", precio: 800 },
+    { nombre: "Alfajores variados", precio: 600 },
+    { nombre: "Caramelos masticables", precio: 250 },
+    { nombre: "Leche ", precio: 150 },
+    { nombre: "Pan", precio: 200 },
+    { nombre: "Queso", precio: 400 },
+];
+// Agregar un nuevo producto al array
+productos.push({ nombre: "Jamon", precio: 250 });
+
+// Función para mostrar el precio total según cantidad
+function mostrarPrecioProducto() {
+    let productoIngresado = prompt("Ingrese el nombre del producto que desea consultar (Gajos dulces,Bon o bon, Chocolates surtidos,Alfajores variados,Caramelos masticables,Leche, Pan,Queso,Jamon:")  ;
+    let cantidad = Number(prompt("¿Cuántas unidades desea llevar?"));
+
+    if (!productoIngresado || isNaN(cantidad) || cantidad <= 0) {
+        console.log("Datos inválidos. Intente nuevamente ");
+        return;
+    } 
+
+
+    let productoEncontrado = buscarProducto(productoIngresado);
+
+    if (productoEncontrado) {
+        let precioTotal = productoEncontrado.precio * cantidad;
+        let precioConDescuento = aplicarDescuentoPorCantidad(cantidad, precioTotal);
+
+        console.log(` Producto: ${productoEncontrado.nombre}`);
+        console.log(` Precio unitario: $${productoEncontrado.precio}`);
+        console.log(`Cantidad: ${cantidad}`);
+        console.log(`Precio final: $${precioConDescuento}`);
+    } else {
+        console.log( `El producto "${productoIngresado}" no se encuentra en el sistema.`);
+    }
+}
+// Función  buscar un producto 
+function buscarProducto(nombreProducto) {
+   
+    return productos.find(producto => producto.nombre.toLowerCase() === nombreProducto.toLowerCase());
+}
+
+// Función para aplicar un descuento 
+function calcularPrecioConDescuento(precio, descuento) {
+    return precio - (precio * descuento / 100);
+}
+
+
+function aplicarDescuentoPorCantidad(cantidad, precioTotal) {
+    const descuento = 10; 
+
+    
+    if (cantidad >= 2) {
+        console.log(` Aplicado un descuento del ${descuento}% por llevar ${cantidad} productos.`);
+        return calcularPrecioConDescuento(precioTotal, descuento);
+    } else {
+        console.log(`No se aplica descuento (lleva menos de 2 productos).`);
+        return precioTotal;
+    }
+}
+
+
+// Bucle principal para repetir consultas
+function iniciarConsulta() {
+    let continuar = true;
+
+    while (continuar) {
+        mostrarPrecioProducto();
+        let respuesta = prompt("¿Querés consultar otro producto? (si/no)");
+        if (respuesta.toLowerCase() !== "si") {
+            continuar = false;}
+             else  {
+            console.log("Gracias por usar el sistema. ¡Hasta luego!");
+        }
+    }
+  }
+
+// Ejecución
+iniciarConsulta();
+
+
+
+///////////////////////////////////////////////////////////
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>simulador de compras- El Tropezon</title>
+  <script defer src="./js/script.js"> </script>
+</head>
+<body>
+  <h1> supermercado el tropezon simulador </h1>
+  <p> este simulador permite realizar una supuesta compra virtual en el supermercado
+    puediendo elegir productos y indicar cantidades calcular el total y aplicar descuentos
+  </p>
+
+  <h2 id="saludo"> productos disponibles </h2>
+  <button id="guardarNombre"> guardar productos </button>
+  <button id="eliminarNombre"> eliminar productos </button>
+
+  
+<div id="app">
+  <p id="parrafo1">Hola Mundo</p>
+</div>
+
+<ul>
+  <li class="paises">AR</li><li class="paises">CL</li><li class="paises">UY</li>
+</ul>
+
+<div>
+  <div>CONTENEDOR 2</div><div>CONTENEDOR 3</div>
+</div>
+
+<div id="contenido">
+  <h1>benvenuto</h1>
+  <p> hola loqullas</p>
+</div>
+
+<h1> ejemplos de eventos en javascript</h1>
+<button id="boton"> haz click aqui</button>
+<input type="text" id="input" >
+
+ <select name="" id="select">
+  <option value="opcion1"> opcion 1</option>
+  <option value="opcion2"> opcion 2</option>
+  <option value="opcion3"> opcion 3</option>
+ </select>
+
+</body>
+</html>
+
+
+
+
+
+//Uso Pre-ES6-----------------------------------------------------------------------------------------------
+
+//function Persona(nombres, edad, calle) {
+  //  this.nombres = nombres;
+    //this.edad = edad;
+    //this.calle = calle;
+    //this.describir = function() {
+      //  return `Nombre: ${this.nombres}, Edad: ${this.edad}, Calle: ${this.calle}`;
+    //};
+//}
+
+// Crear un nuevo objeto Persona
+//var persona1 = new Persona("Ana", 25, "Calle Falsa 123");
+//console.log(persona1.describir());
+
+
+// Clases en ES6-----------------------------------------------------------------------------------------------
+class Persona {
+    constructor(nombre, edad, calle) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.calle = calle;
+    }
+
+    describir() {
+        return `Nombre: ${this.nombre}, Edad: ${this.edad}, Calle: ${this.calle}`;
+    }
+}
+
+// Crear un nuevo objeto Persona
+const persona1 = new Persona("Ana", 25, "Calle Falsa 123");
+console.log(persona1.describir());
+
+
+function clienteVip (apellido, calle, nivelMembresia) {
+    this.apellido = apellido;
+    this.calle = calle;
+    this.nivelMembresia = nivelMembresia;
+
+    this.saludar = function() {
+        console.log (`Hola, soy ${this.apellido}, vivo en ${this.calle} y mi nivel de membresia es ${this.nivelMembresia}`);
+    }
+}
+
+let cliente1 = new clienteVip ("Gomez", "Av Siempre Viva 742", "Oro");
+
+console.log (cliente1.apellido);
+console.log (cliente1.calle);
+console.log (cliente1.nivelMembresia);
+
+cliente1.saludar();
+
+
+
+//localStorage.setItem('clave', 'valor');localStorage.setItem('usuario', 'JuanPerez');
+ localStorage.setItem('puntuacion', '10');
+ let puntuacion = parseInt(localStorage.getItem('puntuacion'));
+ console.log(puntuacion); // 10
+
+
+ //  almacenar datos complejos en localStorage
+  let usuario = {
+   nombre: 'Ana',
+   edad: 25
+ };
+ 
+ localStorage.setItem('usuario', JSON.stringify(usuario));
+
+ //para recuperar el objeto
+    let usuarioRecuperado = JSON.parse(localStorage.getItem('usuario'));
+
+
+    // ejemplo con botones y eventos
+
+    const saludoElemento = document.getElementById('saludo');
+    const botonGuardar = document.getElementById('guardarNombre');
+    const botonEliminar = document.getElementById('eliminarNombre');
+
+    botonGuardar.addEventListener('click', () => {
+        const nombreA = prompt('Ingrese su nombre:');
+if (nombreA) {
+    localStorage.setItem('nombreUsuario', nombreA);
+    saludo.textContent = `Bienvenido, ${nombreA}!`;
+    }
+    });
+     
+    botonEliminar.addEventListener('click', () => {
+    localStorage.removeItem('nombreUsuario');
+    saludo.textContent = `Hola extraño`;
+    
+    });
+
+    const nombreGuardado = localStorage.getItem('nombreUsuario');
+    if (nombreGuardado) {
+        saludoElemento.textContent = `Bienvenido, ${nombreGuardado}!`;
+    }
+
+
+
+    let frutas = "Manzana";
+    let ordenFruta = 10;
+
+    localStorage.setItem('frutasLaposta', frutas);
+    localStorage.setItem('ordenFrutaLaposta', ordenFruta);
+
+    let frutaRecuperada = localStorage.getItem('frutasLaposta');
+    console.log(frutaRecuperada); // Manzana
+
+    let ordenRecuperada = parseInt(localStorage.getItem('ordenFrutaLaposta'));
+    console.log(ordenRecuperada); // 10
+
+
+    //json
+    // Objeto usuario
+let carniceria = {
+  id: "1234",
+  nombre: "lomo de ternera",
+  precio: 1000,
+};
+ console.log(carniceria); // Objeto JavaScript  
+
+let carniceriaJSON = JSON.stringify(carniceria);
+console.log(carniceriaJSON); // Cadena JSON
+
+localStorage.setItem("carniceria", carniceriaJSON);
+
+let carniceriaRecuperada = localStorage.getItem("carniceria");
+console.log(carniceriaRecuperada); // Cadena JSON
+
+let carniceriaObjeto = JSON.parse(carniceriaRecuperada);
+console.log(carniceriaObjeto); // Objeto JavaScript
+
+
+//Supongamos que este es el carrito de compras del usuario
+const carrito = {
+    items: [
+        { id: 1, producto: "Libro", cantidad: 2, precio: 15.00 },
+        { id: 2, producto: "Lápiz", cantidad: 10, precio: 1.50 }
+    ]
+};
+
+// Convertimos el objeto carrito en una cadena JSON y lo almacenamos
+localStorage.setItem('carrito', JSON.stringify(carrito));
+
+// Recuperamos la cadena JSON del almacenamiento y la convertimos de nuevo a un objeto JavaScript
+const carritoAlmacenado = JSON.parse(localStorage.getItem('carrito'));
+
+// Ahora podemos acceder y manipular los datos del carrito como un objeto JavaScript
+console.log(`Total de productos: ${carritoAlmacenado.items.length}`);
+
+
+
+const tapas = [14, 25, 87, 4];
+
+function porCadaUno(array, fn) {
+    for (let i = 0; i < array.length; i++) {
+        fn(array[i]);
+    }
+}
+
+porCadaUno(tapas, console.log);
+
+
+
+//RETORNAR funciones
+
+function mayorQue(n) {
+    return function(m) {
+        return m > n;
+    }
+}
+
+let mayorQueDiez = mayorQue(10);
+
+console.log(mayorQueDiez(12)); // true
+console.log(mayorQueDiez(8));  // false
+
+//funciones del orden superior map
+
+const numeros = [1, 2, 3, 4];
+const duplicados = numeros.map(function(num) {
+    return num * 2;
+});
+
+console.log(duplicados); // [2, 4, 6, 8]
+
+///ejemplo con gaviotas y golondrinas
+
+const gaviotas = [20, 35, 15, 50];
+function porCadaUno(array, fn) {
+    for (let i = 0; i < array.length; i++) {
+        fn(array[i]);
+    }
+}
+porCadaUno(gaviotas, console.log);
+
+let total = 0;
+
+function acumular(golondrinas) {
+    total += golondrinas;
+};
+porCadaUno(gaviotas, acumular);
+console.log(`Total de gaviotas: ${total}`);
+
+const duplicado = [];
+
+porCadaUno(gaviotas , golondrinas => {
+    duplicado.push(golondrinas * 2);
+});
+
+console.log("array duplicado:", duplicado);
+
+
+//uso de for each
+const comida = ['Manzana', 'Banana', 'Cereza'];
+
+comida.forEach(function(comida, indice) {
+    console.log(`Índice ${indice}: ${comida}`);
+});
+
+
+//otro ejemplo
+
+const ofertasNavidad = [
+    { id: 451 ,producto: 'Juguete', precio: 2000 },
+    { id: 782 ,producto: 'Ropa', precio: 3500 },
+    { id: 329 ,producto: 'Electrónica', precio: 15000 },
+    { id: 654 ,producto: 'Libros', precio: 1200 },
+];
+
+const preciosOfertas = ofertasNavidad.find(oferta=> oferta.producto === 'Electrónica');
+console.log(preciosOfertas); // { id: 329, producto: 'Electrónica', precio: 15000 }
+
+const preciosOfertas2 = ofertasNavidad.filter(oferta=> oferta.precio > 3000);
+console.log(preciosOfertas2); // [{ id: 782, producto: 'Ropa', precio: 3500 }, { id: 329, producto: 'Electrónica', precio: 15000 }]
+
+
+
+
+// uso de filter
+const palabras = ['manzana', 'banana', 'cereza', 'damasco'];
+
+const palabrasConA = palabras.filter(function(palabra) {
+    return palabra.includes('a');
+});
+
+console.log(palabrasConA); // ['manzana', 'banana', 'cereza', 'damasco']
+
+
+const sedes = [
+    { nombre: 'la kuka ', ciudad: 'Nueva York', empleados: 150 , sueldos: 2000,},
+    { nombre: 'la carla', ciudad: 'los Ángeles', empleados: 80, sueldos: 2500 ,},
+    { nombre: 'la berta', ciudad: 'Chicago', empleados: 120, sueldos: 3000, },
+    { nombre: 'la alberso',ciudad: 'Houston', empleados: 60, sueldos: 2200 ,},
+];
+const sedesGrandes = sedes.map(sede => sede.nombre );
+console.log(sedesGrandes); // ['la kuka', 'la carla', 'la berta', 'la alberso']
+
+const sedeConReduccion =  sedes.filter(sede =>{
+    return {
+        ...sede,
+        empleados: sede.empleados * 0.20 
+    }
+})
+console.log(sedeConReduccion);
+
+const sueldosHorasExtras = sedes.map(sede => sede.sueldos + 500);
+console.log(sueldosHorasExtras); // [2500, 3000, 3500, 2700]
+
+//utilizar reduce
+const frutas3 = ['manzana', 'banana', 'naranja', 'manzana', 'naranja', 'banana', 'banana'];
+
+const conteoFrutas = frutas3.reduce(function(conteo, fruta) {
+    conteo[fruta] = (conteo[fruta] || 0) + 1;
+    return conteo;
+}, {});
+
+console.log(conteoFrutas);
+// { manzana: 2, banana: 3, naranja: 2 }
+
+const ventasMinoristas = [400, 150, 678, 250];
+
+ventasMinoristas.sort((a, b) => a - b);
+console.log(ventasMinoristas); // [150, 250, 400, 678]
+
+const elementos = ['Mesa', 'Silla', 'Lámpara', 'Estante'];
+elementos.sort((a, b) => a.localeCompare(b ));
+console.log(elementos); // ['Estante', 'Lámpara', 'Mesa', 'Silla']
+
+const items = [
+    { nombre: 'Item A', precio: 300 },
+    { nombre: 'Item B', precio: 150 },
+    { nombre: 'Item C', precio: 450 }
+];
+items.sort((a, b) => a.precio - b.precio);
+console.log(items);
+// [{ nombre: 'Item B', precio: 150 },
+
+
+
+//DOM Manipulación-----------------------------------------------------------------------------------------------
+// JavaScript
+let div = document.getElementById("app");
+let parrafo = document.getElementById("parrafo1");
+console.log(div.innerHTML); // Muestra el contenido HTML dentro del div
+console.log(parrafo.innerHTML); // Muestra "Hola Mundo"
+
+
+// JavaScript
+let paises = document.getElementsByClassName("paises");
+console.log(paises[0].innerHTML); // Muestra "AR"
+console.log(paises[1].innerHTML); // Muestra "CL"
+console.log(paises[2].innerHTML); // Muestra "UY"
+
+// JavaScript
+let contenedores = document.getElementsByTagName("div");
+console.log(contenedores[0].innerHTML); // Muestra "CONTENEDOR 2"
+console.log(contenedores[1].innerHTML); // Muestra "CONTENEDOR 3"
+
+let encabezado = document.querySelector('h1');
+let parrafos = document.querySelector('.texto-destacado');
+let elementoEnlace = document.querySelector('a[href="#seccion"]');
+
+let parrafos1 = document.querySelectorAll('p');
+let itemsMenu = document.querySelectorAll('ul.menu li');
+
+//modificacion de nodos
+
+let contenido = document.getElementById('contenido');
+contenido.innerHTML = '<h2>Nuevo Título</h2><p>Nuevo párrafo agregado dinámicamente.</p>';
+
+let titulo = document.querySelector('h1');
+titulo.innerText = 'Título Modificado';
+
+titulo.className = 'nuevo-estilo';
+
+
+//Plantillas Literales e Interactividad
+const nombra = "Juan";
+const edada = 30;
+
+const contenedor = document.getElementById('info');
+
+contenedor.innerHTML = `
+  <h2>Información del Usuario</h2>
+  <p>Nombre: ${nombra}</p>
+  <p>Edad: ${edada}</p>
+`;
+
+const productos12 = [
+  { nombre: "Arroz", precio: 125 },
+  { nombre: "Fideos", precio: 70 },
+  { nombre: "Pan", precio: 50 }
+];
+
+const contenedor = document.getElementById('productos12');
+
+contenedor.innerHTML = `
+  <h2>Lista de Productos</h2>
+  <ul>
+    ${productos.map(producto12 => `<li>${producto12.nombre} - $${producto12.precio}</li>`).join('')}
+  </ul>
+`;
+
+
+let boton = document.getElementById('boton');
+boton.addEventListener('click', function() {
+    alert('¡reservado!');
+});
+
+let input = document.getElementById('input');
+input.addEventListener('input', function() {
+    console.log('Valor actual del input:', input.value);
+});
+
+let usuario = document.getElementById('select');
+usuario.addEventListener('change', function() {
+    console.log("Opción seleccionada:"+ this.value);
+}
+
+
+//////////////////////
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supermercado JS</title>
+  <link rel="stylesheet" href="estilos.css">
+  
+    <script defer src="./js/script.js"> </script>
+</head>
+<body>
+
+  <h1>Supermercado</h1>
+
+  <input type="text" id="buscador" placeholder="Buscar producto...">
+
+  <div id="contenedor-productos"></div>
+
+  <h2>Carrito</h2>
+  <div id="carrito"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+///////////////////////7
+
+// ----------------------------
+// BASE DE PRODUCTOS
+// ----------------------------
+const productos = [
+  {
+    id: 1,
+    nombre: "Manzana 🍎",
+    categoria: "Frutas",
+    precio: 500,
+    descripcion: "Manzanas rojas frescas",
+    imagen: "https://via.placeholder.com/150"
+  },
+  {
+    id: 2,
+    nombre: "Leche 🥛",
+    categoria: "Lácteos",
+    precio: 1200,
+    descripcion: "Leche entera 1L",
+    imagen: "https://via.placeholder.com/150"
+  },
+  {
+    id: 3,
+    nombre: "Fideos 🍝",
+    categoria: "Almacén",
+    precio: 950,
+    descripcion: "Fideos secos 500g",
+    imagen: "https://via.placeholder.com/150"
+  }
+];
+
+// Guardar productos en localStorage
+localStorage.setItem("productos", JSON.stringify(productos));
+
+
+const contenedor = document.getElementById("contenedor-productos");
+const buscador = document.getElementById("buscador");
+const carritoDOM = document.getElementById("carrito");
+
+// carrito (cargado desde localStorage o vacío)
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+
+function mostrarProductos(lista) {
+  contenedor.innerHTML = "";
+
+  lista.forEach(producto => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    card.innerHTML = `
+        <img src="${producto.imagen}" alt="${producto.nombre}">
+        <h3>${producto.nombre}</h3>
+        <p>${producto.descripcion}</p>
+        <p><strong>$${producto.precio}</strong></p>
+        <button class="btn-agregar">Agregar al carrito</button>
+      `;
+
+    // Evento botón
+    card.querySelector(".btn-agregar").addEventListener("click", () => {
+      carrito.push(producto);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      actualizarCarrito();
+    });
+
+    contenedor.appendChild(card);
+  });
+}
+
+/
+// ----------------------------
+function actualizarCarrito() {
+  carritoDOM.innerHTML = "";
+
+  if (carrito.length === 0) {
+    carritoDOM.innerHTML = "<p>El carrito está vacío.</p>";
+    return;
+  }
+
+  carrito.forEach(item => {
+    const div = document.createElement("div");
+    div.classList.add("card");
+
+    div.innerHTML = `
+      <h3>${item.nombre}</h3>
+      <p>Precio: $${item.precio}</p>
+      <p>Categoría: ${item.categoria}</p>
+    `;
+
+    carritoDOM.appendChild(div);
+  });
+}
+
+buscador.addEventListener("input", () => {
+  const texto = buscador.value.toLowerCase();
+  const filtrados = productos.filter(p =>
+    p.nombre.toLowerCase().includes(texto) ||
+    p.categoria.toLowerCase().includes(texto)
+  );
+  mostrarProductos(filtrados);
+});
+
+mostrarProductos(productos);
+actualizarCarrito();
+

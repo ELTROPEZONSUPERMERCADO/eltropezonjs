@@ -1,212 +1,48 @@
-@charset "UTF-8";
-.contenedor-principal {
-  background-color: burlywood;
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+#contenedor-productos, #carrito {
   display: grid;
-  grid-template-areas: "texto5 texto5 texto5" "producto1 producto2 producto3" "texto6 texto6 texto6" "subtexto5 subtexto5 subtexto5" "formulario formulario formulario";
-  grid-template-columns: 30% 30% 30%;
-  grid-template-rows: auto auto auto;
-  justify-items: center;
-  align-items: center;
-  justify-content: center;
-}
-.contenedor-principal .titulo1 {
-  grid-area: texto5;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: rgb(12, 23, 45); /* Puede ser rgba, hexadecimal, nombre o rgb */
-  font-size: 45px; /* Tamaño de letra: px, em, rem, % */
-  text-align: center;
-  font-weight: bold;
-  font-family: "Times New Roman", Times, serif;
-  margin-bottom: 5%;
-  margin-top: 5%;
-  margin: 15px;
-}
-.contenedor-principal .contenedor-imagen1 {
-  grid-area: producto1;
-  max-width: 100%;
-  border-radius: 10px;
-  margin: 15px;
-  border: red 2px solid;
-}
-.contenedor-principal .contenedor-imagen2 {
-  grid-area: producto2;
-  max-width: 100%;
-  border-radius: 10px;
-  margin: 15px;
-  border: red 2px solid;
-}
-.contenedor-principal .contenedor-imagen3 {
-  grid-area: producto3;
-  max-width: 100%;
-  border-radius: 10px;
-  margin: 15px;
-  border: red 2px solid;
-}
-.contenedor-principal img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin: 15px;
-  border: red 2px solid;
-}
-.contenedor-principal img:hover {
-  transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
-  transition: transform 0.3s ease; /* Suaviza la transición */
-  border: rgb(0, 0, 0) 2px solid; /* Cambia el borde al pasar el mouse */
-}
-.contenedor-principal .titulo2 {
-  grid-area: texto6;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: rgb(12, 23, 45); /* Puede ser rgba, hexadecimal, nombre o rgb */
-  font-size: 45px; /* Tamaño de letra: px, em, rem, % */
-  text-align: center;
-  font-weight: bold;
-  font-family: "Times New Roman", Times, serif;
-  margin-bottom: 5%;
-  margin-top: 5%;
-  margin: 15px;
-}
-.contenedor-principal .subtexto1 {
-  grid-area: subtexto5;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: rgb(12, 23, 45); /* Puede ser rgba, hexadecimal, nombre o rgb */
-  font-size: 45px; /* Tamaño de letra: px, em, rem, % */
-  text-align: center;
-  font-weight: bold;
-  font-family: "Times New Roman", Times, serif;
-  margin-bottom: 5%;
-  margin-top: 5%;
-  margin: 15px;
-}
-.contenedor-principal .formulario-contacto {
-  grid-area: formulario;
-  background-color: #f2f2f2;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 50%;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.dropdown-menu .dropdown-item {
-  color: black;
+.card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  background: #fff;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* hace que el ancho y alto de los elementos incluya el padding y el borde */
-}
-
-header {
-  flex-direction: row;
-  justify-content: space-around;
-}
-header img {
-  width: 60px; /* ancho del logo */
-  height: 60px; /* alto del logo */
-  border-radius: 50%; /* hace que el logo sea redondo */
-  margin: 10px; /* margen alrededor del logo */
-  display: block; /* hace que el logo se muestre como un bloque */
-  margin-left: auto; /* centra el logo horizontalmente */
-}
-
-/* estilos de nav */
-nav {
-  background-color: #000000; /* color de fondo del nav */
-  color: rgb(255, 255, 255); /* color del texto del nav */
-  padding: 10px; /* espacio interno del nav */
-  margin: auto; /* centra el nav horizontalmente */
-  text-align: center; /* centra el texto dentro del nav */
-}
-nav a {
-  padding: 10px; /* espacio interno de los enlaces */
-  margin: 5px; /* margen alrededor de los enlaces */
-}
-
-/* whatapp de costado --------------------------------------- */
-.whatsapp-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
-}
-.whatsapp-button .whatsapp-button img {
-  width: 60px; /* Ajusta el tamaño del logo */
-  height: auto;
-  border-radius: 50%; /* Hace que el logo sea circular */
-}
-
-.whatsapp-button:hover img {
-  transform: scale(1.1); /* Pequeño aumento al pasar el ratón */
-  transition: transform 0.2s ease-in-out;
-}
-
-/* para footer -----------------------------------------------------------------------------------------*/
-footer {
-  background-color: #000000;
-  color: white; /* Cambiado a blanco para que sea visible sobre el fondo negro */
-  text-align: center;
+.card img {
   width: 100%;
-}
-footer a {
-  color: #ffffff; /* Mantenemos el color blanco para los enlaces */
-  text-decoration: none;
-}
-footer .contenedor-footer {
-  color: rgb(255, 255, 255);
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly; /* Espacio uniforme entre las secciones */
-  align-items: center; /* Centra verticalmente los elementos */
-  padding: 20px;
-}
-footer .contenedor-footer section {
-  padding: 10px;
-}
-footer .contenedor-footer-horario,
-footer .contenedor-footer-pago,
-footer .contenedor-footer-redes {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centramos horizontalmente los elementos dentro de la columna */
-}
-footer .logo-footer {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 5px;
-}
-footer .logo-redes {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin: 5px;
-  display: inline-block;
+  height: 120px;
+  object-fit: cover;
 }
 
-.animacioncliente {
-  border: red 2px solid;
-  transition: 2s;
-  background-size: cover;
+button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border: none;
+  background-color: #1e88e5;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.animacioncliente:hover {
-  transform: rotate(360deg);
-  border: rgb(254, 254, 254) 2px solid;
-  background-size: cover;
+button:hover {
+  background-color: #0d47a1;
 }
 
-/*# sourceMappingURL=estilos.css.map */
+#vaciar-carrito {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #e53935;
+}
+#vaciar-carrito:hover {
+  background-color: #b71c1c;
+}
